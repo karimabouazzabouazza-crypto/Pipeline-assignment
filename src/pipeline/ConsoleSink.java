@@ -1,8 +1,10 @@
 package pipeline;
 
-public class ConsoleSink implements Sink<String> {
+public class ConsoleSink implements Sink<LogRecord> {
     @Override
-    public void consume(String item) {
-        System.out.println(item);
+    public void consume(LogRecord record) {
+        if (record != null) {
+            System.out.println(record);
+        }
     }
 }
